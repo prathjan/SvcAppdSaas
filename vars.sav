@@ -1,0 +1,6 @@
+variable "download" {
+  type = string
+}
+variable "install" {
+  type = string
+}
