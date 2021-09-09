@@ -22,12 +22,12 @@ data "terraform_remote_state" "global" {
 data "external" "appd" {
   program = ["bash", "./scripts/getappd.sh"]
   query = {
-    appname = "${local.appname}"
+    appname = "${var.appname}"
     accesskey = "fillmein"
-    jver = "${local.javaver}"
-    clientid = "${local.clientid}"
-    clientsecret = "${local.clientsecret}"
-    url = "${local.url}"
+    jver = "${var.javaver}"
+    clientid = "${var.clientid}"
+    clientsecret = "${var.clientsecret}"
+    url = "${var.url}"
   }
 #    clsecrt = "${var.clsecrt}"
 #    zerover = "${var.zerover}"
