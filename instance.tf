@@ -41,6 +41,9 @@ data "external" "appd" {
 #    javaver = "${var.javaver}"
 }
 
+variable "appvmwsname" {
+  type = string
+}
 variable "globalwsname" {
   type = string
 }
