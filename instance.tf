@@ -107,7 +107,7 @@ locals {
   nbrnet = data.terraform_remote_state.global.outputs.nbrnet
   root_password = yamldecode(data.terraform_remote_state.global.outputs.root_password)
   appname = yamldecode(data.terraform_remote_state.global.outputs.appname)
-  javaver = yamldecode(data.terraform_remote_state.global.outputs.jver)
+  javaver = yamldecode(data.terraform_remote_state.global.outputs.javaver)
   clientid = yamldecode(data.terraform_remote_state.global.outputs.clientid)
   clientsecret = yamldecode(data.terraform_remote_state.global.outputs.clientsecret)
   url = yamldecode(data.terraform_remote_state.global.outputs.url)
