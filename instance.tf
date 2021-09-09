@@ -56,8 +56,8 @@ variable "install" {
 }
 
 resource "null_resource" "vm_node_init" {
-  download = data.external.appd.result["download"]
-  install = data.external.appd.result["install"]
+  #download = data.external.appd.result["download"]
+  #install = data.external.appd.result["install"]
   provisioner "file" {
     source = "scripts/"
     destination = "/tmp"
@@ -73,15 +73,15 @@ resource "null_resource" "vm_node_init" {
   provisioner "remote-exec" {
     inline = [
         "chmod +x /tmp/rbac.sh",
-        "${var.download}",
+        "${data.external.appd.result["download"]}",
 	"/tmp/rbac.sh ${local.nbrapm} ${local.nbrma} ${local.nbrsim} ${local.nbrnet}",
 	". /home/ec2-user/environment/workshop/application.env",
 	"echo echoing install",
-	"echo ${var.install}",
+	"echo ${data.external.appd.result["install"]}",
 	"echo echoing accesskey",
 	"echo $APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY",
 	"echo replacement",
-	"echo ${var.install} > /tmp/installcmd.sh",
+	"echo ${data.external.appd.result["install"]} > /tmp/installcmd.sh",
 	"sed 's/fillmein/'$APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY'/g' /tmp/installcmd.sh > /tmp/installexec.sh",
 	"chmod +x /tmp/installexec.sh",
 	"echo installing",
