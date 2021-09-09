@@ -23,7 +23,6 @@ data "external" "appd" {
   program = ["bash", "./scripts/getappd.sh"]
   query = {
     appname = "${local.appname}"
-    accesskey = ""
     jver = "${local.javaver}"
     clientid = "${local.clientid}"
     clientsecret = "${local.clientsecret}"
