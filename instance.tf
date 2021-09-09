@@ -1,4 +1,14 @@
 #get the data fro the global vars WS
+data "terraform_remote_state" "appvm" {
+  backend = "remote"
+  config = {
+    organization = "Lab14"
+    workspaces = {
+      name = var.appvmwsname
+    }
+  }
+}
+
 data "terraform_remote_state" "global" {
   backend = "remote"
   config = {
@@ -93,7 +103,7 @@ locals {
   root_password = yamldecode(data.terraform_remote_state.global.outputs.root_password)
   appname = yamldecode(data.terraform_remote_state.global.outputs.appname)
   accesskey = yamldecode(data.terraform_remote_state.global.outputs.accesskey)
-  jver = yamldecode(data.terraform_remote_state.global.outputs.jver)
+  javaver = yamldecode(data.terraform_remote_state.global.outputs.jver)
   clientid = yamldecode(data.terraform_remote_state.global.outputs.clientid)
   clientsecret = yamldecode(data.terraform_remote_state.global.outputs.clientsecret)
   url = yamldecode(data.terraform_remote_state.global.outputs.url)
