@@ -23,7 +23,7 @@ data "external" "appd" {
   program = ["bash", "./scripts/getappd.sh"]
   query = {
     appname = "${local.appname}"
-    accesskey = "${local.accesskey}"
+    accesskey = ""
     jver = "${local.javaver}"
     clientid = "${local.clientid}"
     clientsecret = "${local.clientsecret}"
@@ -107,7 +107,6 @@ locals {
   nbrnet = data.terraform_remote_state.global.outputs.nbrnet
   root_password = yamldecode(data.terraform_remote_state.global.outputs.root_password)
   appname = yamldecode(data.terraform_remote_state.global.outputs.appname)
-  accesskey = yamldecode(data.terraform_remote_state.global.outputs.accesskey)
   javaver = yamldecode(data.terraform_remote_state.global.outputs.jver)
   clientid = yamldecode(data.terraform_remote_state.global.outputs.clientid)
   clientsecret = yamldecode(data.terraform_remote_state.global.outputs.clientsecret)
