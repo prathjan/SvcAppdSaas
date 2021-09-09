@@ -29,8 +29,8 @@ data "external" "appd" {
     clientsecret = "${local.clientsecret}"
     url = "${local.url}"
   }
-  download = data.external.appd.result["download"]
-  install = data.external.appd.result["install"]
+#  download = data.external.appd.result["download"]
+#  install = data.external.appd.result["install"]
 
 
 #    clsecrt = "${var.clsecrt}"
@@ -53,6 +53,8 @@ variable "install" {
 }
 
 resource "null_resource" "vm_node_init" {
+  download = data.external.appd.result["download"]
+  install = data.external.appd.result["install"]
   provisioner "file" {
     source = "scripts/"
     destination = "/tmp"
