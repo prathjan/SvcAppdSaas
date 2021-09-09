@@ -23,11 +23,31 @@ data "external" "appd" {
   program = ["bash", "./scripts/getappd.sh"]
   query = {
     appname = "${local.appname}"
+    accesskey = "fillmein"
     jver = "${local.javaver}"
     clientid = "${local.clientid}"
     clientsecret = "${local.clientsecret}"
     url = "${local.url}"
   }
+#    clsecrt = "${var.clsecrt}"
+#    zerover = "${var.zerover}"
+#    infraver = "${var.infraver}"
+#    machinever = "${var.machinever}"
+#    ibmver = "${var.ibmver}"
+#    javaver = "${var.javaver}"
+}
+
+
+
+#data "external" "appd" {
+#  program = ["bash", "./scripts/getappd.sh"]
+#  query = {
+#    appname = "${local.appname}"
+#    jver = "${local.javaver}"
+#    clientid = "${local.clientid}"
+#    clientsecret = "${local.clientsecret}"
+#    url = "${local.url}"
+#  }
 #  download = data.external.appd.result["download"]
 #  install = data.external.appd.result["install"]
 
@@ -38,7 +58,7 @@ data "external" "appd" {
 #    machinever = "${var.machinever}"
 #    ibmver = "${var.ibmver}"
 #    javaver = "${var.javaver}"
-}
+#}
 
 variable "appvmwsname" {
   type = string
