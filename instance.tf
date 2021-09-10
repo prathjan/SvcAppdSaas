@@ -24,27 +24,4 @@ output "download" {
 output "install" {
   value = data.external.appd.result["install"]
 }
-output "apps" {
-  value = "${var.appwars}"
-}
-output "mysql_pass" {
-  value = "${var.mysql_pass}"
-  sensitive = true
-}
-
-output "appport" {
-  value = "${var.appport}"
-}
-output "nbrapm" {
-  value = "${var.nbrapm}"
-}
-output "nbrma" {
-  value = "${var.nbrma}"
-}
-output "nbrsim" {
-  value = "${var.nbrsim}"
-}
-output "nbrnet" {
-  value = "${var.nbrnet}"
-}
 
