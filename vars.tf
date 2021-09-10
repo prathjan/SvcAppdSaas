@@ -26,4 +26,12 @@ variable "ibmver" {
 variable "javaver" {
   type = string
 }
+// The application name for appd
+variable "appname" {
+  type = string
+}
+// The accesskey for appd
+variable "accesskey" {
+  type = string
+}
 
