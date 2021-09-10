@@ -67,7 +67,7 @@ variable "globalwsname" {
   type = string
 }
 
-variable "download" {
+variable "appname" {
   type = string
 }
 variable "install" {
