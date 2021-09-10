@@ -30,8 +30,4 @@ variable "javaver" {
 variable "appname" {
   type = string
 }
-// The accesskey for appd
-variable "accesskey" {
-  type = string
-}
 
