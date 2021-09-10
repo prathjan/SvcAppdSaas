@@ -23,7 +23,7 @@ data "external" "appd" {
   program = ["bash", "./scripts/getappd.sh"]
   query = {
     appname = "${var.appname}"
-    accesskey = "fillmein"
+    accesskey = "${var.accesskey}" 
     jver = "${var.javaver}"
     clientid = "${var.clientid}"
     clientsecret = "${var.clientsecret}"
@@ -70,7 +70,7 @@ variable "globalwsname" {
 variable "appname" {
   type = string
 }
-variable "install" {
+variable "accesskey" {
   type = string
 }
 
