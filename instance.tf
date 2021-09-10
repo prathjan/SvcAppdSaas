@@ -23,11 +23,11 @@ data "external" "appd" {
   program = ["bash", "./scripts/getappd.sh"]
   query = {
     appname = "${var.appname}"
-    accesskey = "${var.accesskey}" 
-    jver = "${var.javaver}"
-    clientid = "${var.clientid}"
-    clientsecret = "${var.clientsecret}"
-    url = "${var.url}"
+#    accesskey = "${var.accesskey}" 
+#    jver = "${var.javaver}"
+#    clientid = "${var.clientid}"
+#    clientsecret = "${var.clientsecret}"
+#    url = "${var.url}"
   }
 #    clsecrt = "${var.clsecrt}"
 #    zerover = "${var.zerover}"
